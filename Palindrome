@@ -1,0 +1,16 @@
+ p = input("Enter a palindrome : ")
+        end = len(p) - 1 #The end index of string
+        for i in range(((len(p) // 2)) + 1):
+            if p[i] != p[end]:
+                print("It is not a palindrome!")
+                break
+
+            elif count == (len(p))//2:
+                print("It is a palindrome!")
+
+            elif p[i] == p[end]:
+                end -= 1
+                i += 1
+                count += 1
+                continue
+palindrome()
