@@ -1,0 +1,13 @@
+list1 = [1, 3, 3, 6, 9, 12]
+target = int(input("Enter an integer "))
+
+def get_index(list1, target):
+    for i, num1 in enumerate(list1):
+        x = target - num1
+
+        for j, num2 in enumerate(list1):
+            if x == num2 and i != j:
+                return i, j
+
+    return None
+print(get_index(list1, target))
