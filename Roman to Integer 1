@@ -1,0 +1,38 @@
+def roman():
+    values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    value = 0
+    while True:
+        num = input("Enter a roman numeral : ").upper()
+        for i in range(len(num)):
+            if len(num) == 1:
+                value = values[num]
+                print("The value of the roman numeral is : ", value)
+                break
+
+            if i == len(num) - 1:
+                print("The value of the roman numeral is : ", value)
+                break
+
+            elif i == 0:
+                if values[num[0]] >= values[num[1]]:
+                    value = values[num[i]] + values[num[i + 1]]
+                elif values[num[0]] < values[num[1]]:
+                    value = values[num[i + 1]] - values[num[i]]
+
+
+            elif i != 0:
+                if values[num[i]] >= values[num[i+1]]:
+                    value = value + values[num[i+1]]
+                    continue
+
+                elif values[num[i]] < values[num[i+1]]:
+                    value = value - values[num[i+1]]
+                    continue
+
+
+roman()
+
+#IIII is not possible
+
+#Enter a roman numeral : LVI
+#The value of the roman numeral is :  -44
